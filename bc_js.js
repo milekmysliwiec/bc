@@ -27,7 +27,7 @@ function showSlideshome() {
     }
     slideshome[slidehomeIndex-1].style.display = "block";  
     dot2s[slidehomeIndex-1].className += " active";
-    setTimeout(showSlideshome, 3000);
+    setTimeout(showSlideshome, 5000);
 }
 
 // about_us showSlides

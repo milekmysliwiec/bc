@@ -25,12 +25,13 @@ body {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 20px;
+    font-weight: bold;
 }
 
 /* change the color of links on hover */
 .topnav a:hover {
-    background-color: #ddd;
+    background-color: rgb(79, 193, 228);
     color: black;
 }
 
@@ -88,9 +89,9 @@ body {
 .fade_home {
   position: relative;
   -webkit-animation-name: fade_home;
-  -webkit-animation-duration: 2s;
+  -webkit-animation-duration: 3s;
   animation-name: fade_home;
-  animation-duration: 2s;
+  animation-duration: 3s;
 }
 
 @-webkit-keyframes fade_home {
@@ -102,25 +103,49 @@ body {
   from {opacity: .3} 
   to {opacity: 1}
 }
+
+
+/* Container holding the image and the text */
+.container_main {
+  position: relative;
+}
+
+/* Bottom right text */
+.text-block_main {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  background-color: black;
+  color: white;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+@media screen and (max-width: 750px) {
+  .text-block_main, .container_main {    
+   
+    display: none;
+  }
+}
 /* news     news    news    news    news    news    news    news    news    news    news    news*/
 
 .news {
     background-color: rgb(214, 214, 214);
     overflow: hidden;
 }
-.news h2 {
-    float: left;
-    width: 100%;
-    text-align: center;
-    color: #9c9c9c;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 30px;
-    padding: 0px 0px 0px -30px;   
+.news h1 {
+  text-align: center; 
+  padding: 0px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 30px; 
+  color: black;
+  font-weight: bold;    
 }
 .quarter {
     width: 25%;
     float: left;
     padding: 40px;
+    text-align: justify;
 }
 .quarter img {
     width: 49%;
@@ -143,20 +168,25 @@ body {
     min-height: 700px;
 }
 
+
+.about_us  h1 {
+  text-align: center; 
+  padding: 20px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 30px; 
+  color: white;
+  font-weight: bold; 
+}
+
+
 .about_us h2  {
     color: #ffffff;
-    padding: 50px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
     width: 100%;
     text-align: center;
 }
 
-.about_us h4  {
-    color: #ffffff;
-    padding: 10px;
-    width: 100%;
-    margin: 0%;
-    text-align: center;
-}
+
 
 
 .duo {
@@ -286,15 +316,24 @@ body {
     }
 }
 
+@media screen and (max-width: 750px) {
+   .text-block  {    
+    size: 10%;
+    
+  }
+}
+
 
 /* our_offer   our_offer   our_offer   our_offer   our_offer   our_offer   our_offer   our_offer   our_offer   our_offer   our_offer   our_offer   our_offer   our_offer   our_offer   our_offer */
 
 .our_offer {
-    background: #9c9c9c;
+    background: #919191;
     overflow: hidden;
     min-height: 700px;
     padding-bottom: 20px;
 }
+
+
 
 .our_offer h2 {
     padding: 50px 0px 0px 30px;
@@ -330,6 +369,7 @@ body {
     overflow: hidden;
     border: 1px solid #ccc;
     background-color: #f1f1f1;
+    
 }
 
 /* Style the buttons that are used to open the tab content */
@@ -341,6 +381,7 @@ body {
     cursor: pointer;
     padding: 14px 16px;
     transition: 0.3s;
+    font-size: 15px;
 }
 
 /* Change background color of buttons on hover */
@@ -474,12 +515,25 @@ body {
     border: none;
     text-align: left;
     outline: none;
-    font-size: 15px;
+    font-size: 16 px;
     transition: 0.4s;
 }
 
 .active_table, .accordion:hover {
     background-color: #ccc; 
+}
+
+
+.accordion:after {
+  content: '\02795'; /* Unicode character for "plus" sign (+) */
+  font-size: 8px;
+  color: #777;
+  float: right;
+  margin-left: 5px;
+}
+
+.active_table:after {
+  content: "\2796"; /* Unicode character for "minus" sign (-) */
 }
 
 .panel {
@@ -568,9 +622,100 @@ a {
 
 
 .contact {
-  background: #9c9c9c;
+  background: #b8b7b7;
   overflow: hidden;
   min-height: 700px;
   padding-bottom: 20px;
 }
 
+ h1 {
+  text-align: center; 
+  padding: 20px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 30px; 
+  color: black;
+  font-weight: bold; 
+}
+
+.column_contact {
+  float: left;
+  width: 33.3%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+@media screen and (max-width: 650px) {
+  .column_contact {
+    width: 100%;
+    display: block;
+  }
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  background: #717171;
+
+}
+
+.container_contact {
+  padding: 0 16px;
+}
+
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: rgb(180, 180, 180);
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.button:hover {
+  background-color: #555;
+}
+
+/* footer footer footer footer footer footer footer footer footer footer footer footer footer footer footer */
+
+
+.footer {
+  padding-top: 50px;
+  background: #000000;
+  overflow: hidden;
+  padding-bottom: 80px;
+  color: #ffffff;
+}
+
+
+.center {
+  display: inline;
+  text-align: center;
+}
+
+.icon {
+  font-size: 30px;
+}
+
+.go_home {
+  position:relative;
+  float: right;
+  padding-right: 40px;
+  z-index:1;
+
+}
+
+.go_home a{
+  font-size: 30px;
+}
